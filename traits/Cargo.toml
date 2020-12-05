@@ -1,5 +1,5 @@
 [package]
-name = "panic"
+name = "traits"
 version = "0.1.0"
 authors = ["liyunteng <li_yunteng@163.com>"]
 edition = "2018"
@@ -7,6 +7,3 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-
-[profile.release]
-panic = 'abort'
