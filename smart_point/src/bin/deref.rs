@@ -1,3 +1,8 @@
+#[derive(Debug)]
+enum List {
+    Cons(i32, Box<List>),
+    Nil,
+}
 use crate::List::{Cons, Nil};
 
 struct MyBox<T>(T);

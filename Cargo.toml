@@ -22,4 +22,5 @@ members = [
     "traits",
     "variables",
     "smart_point",
+    "concurrency",
 ]
