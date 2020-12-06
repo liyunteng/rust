@@ -20,5 +20,6 @@ members = [
     "slice",
     "structure",
     "traits",
-    "variables"
+    "variables",
+    "smart_point",
 ]
