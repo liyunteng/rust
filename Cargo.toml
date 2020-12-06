@@ -1,0 +1,24 @@
+[workspace]
+members = [
+    "adder",
+    "branches",
+    "closures",
+    "collections",
+    "enumerations",
+    "functions",
+    "generics",
+    "guessing_game",
+    "hello_world",
+    "iterator",
+    "matchs",
+    "minigrep",
+    "my_crate",
+    "ownership",
+    "panic",
+    "rectangles",
+    "restaurant",
+    "slice",
+    "structure",
+    "traits",
+    "variables"
+]
