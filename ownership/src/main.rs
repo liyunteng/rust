@@ -45,7 +45,7 @@ fn test_ownership2() {
 
     let (s2, len) = calculate_length(s1);
 
-    println!("The length of '{}' is {}.",  s2, len);
+    println!("The length of '{}' is {}.", s2, len);
 
     let len = calculate_length2(&s2);
     println!("The length of '{}' is {}.", s2, len);

@@ -25,7 +25,7 @@ fn main() {
         3 => println!("three"),
         5 => println!("five"),
         7 => println!("seven"),
-        _ => println!("{}",some_u8_value),
+        _ => println!("{}", some_u8_value),
     }
 
     let some_u8_value = Some(3);
@@ -36,7 +36,6 @@ fn main() {
     if let Some(3) = some_u8_value {
         println!("three");
     } else {
-
     }
 }
 
@@ -45,19 +44,19 @@ fn value_in_cents(coin: Coin) -> u8 {
         Coin::Penny => 1,
         Coin::Nickel => 5,
         Coin::Dime => {
-            println!("Luck penny!", );
+            println!("Luck penny!",);
             10
-        },
+        }
         Coin::Quarter(state) => {
             println!("State quarter from {:?}!", state);
             25
-        },
+        }
     }
 }
 
 fn plus_one(x: Option<i32>) -> Option<i32> {
     match x {
         None => None,
-        Some(i) => Some(i+1),
+        Some(i) => Some(i + 1),
     }
 }

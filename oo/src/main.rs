@@ -1,5 +1,5 @@
-use oo::{Draw, Button, Screen};
 use oo::Post;
+use oo::{Button, Draw, Screen};
 
 #[derive(Debug)]
 struct SelectBox {

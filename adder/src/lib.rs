@@ -27,9 +27,7 @@ impl Guess {
         if value < 1 || value > 100 {
             panic!("Guess value must be between 1 and 100, got {}", value);
         }
-        Guess {
-            value
-        }
+        Guess { value }
     }
 }
 
@@ -44,16 +42,28 @@ mod tests {
 
     #[test]
     fn larger_can_hold_smaller() {
-        let larger = Rectangle{ width: 8, height: 7};
-        let smaller = Rectangle { width: 5, height: 1};
+        let larger = Rectangle {
+            width: 8,
+            height: 7,
+        };
+        let smaller = Rectangle {
+            width: 5,
+            height: 1,
+        };
 
         assert!(larger.can_hold(&smaller));
     }
 
     #[test]
     fn smaller_cannot_hold_larger() {
-        let larger = Rectangle{ width: 8, height: 7 };
-        let smaller = Rectangle { width: 5, height: 1 };
+        let larger = Rectangle {
+            width: 8,
+            height: 7,
+        };
+        let smaller = Rectangle {
+            width: 5,
+            height: 1,
+        };
 
         assert!(!smaller.can_hold(&larger));
     }

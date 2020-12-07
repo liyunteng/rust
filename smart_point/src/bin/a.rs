@@ -1,6 +1,6 @@
-use std::rc::{Rc, Weak};
-use std::cell::RefCell;
 use crate::List::{Cons, Nil};
+use std::cell::RefCell;
+use std::rc::{Rc, Weak};
 
 #[derive(Debug)]
 struct Node {
@@ -27,7 +27,7 @@ impl List {
 fn main() {
     let a = Rc::new(Cons(5, RefCell::new(Rc::new(Nil))));
 
-    println!("a initi9al rc count = {}",  Rc::strong_count(&a));
+    println!("a initi9al rc count = {}", Rc::strong_count(&a));
     println!("a next item = {:?}", a.tail());
 
     let b = Rc::new(Cons(10, RefCell::new(Rc::clone(&a))));
@@ -43,20 +43,21 @@ fn main() {
     println!("b rc count after changing a = {}", Rc::strong_count(&b));
     println!("a rc count after changing a = {}", Rc::strong_count(&a));
 
-
     // uncomment the next line to see that we have a cycle;
     // it will overflow the stack
     // println!("a next item = {:?}", a.tail());
-    println!("=====================", );
+    println!("=====================",);
 
     let leaf = Rc::new(Node {
         value: 3,
         parent: RefCell::new(Weak::new()),
         children: RefCell::new(vec![]),
     });
-    println!("leaf strong = {} weak = {}",
-             Rc::strong_count(&leaf),
-             Rc::weak_count(&leaf));
+    println!(
+        "leaf strong = {} weak = {}",
+        Rc::strong_count(&leaf),
+        Rc::weak_count(&leaf)
+    );
     println!("leaf parent = {:?}", leaf.parent.borrow().upgrade());
     {
         let branch = Rc::new(Node {
@@ -66,18 +67,23 @@ fn main() {
         });
         *leaf.parent.borrow_mut() = Rc::downgrade(&branch);
 
-        println!("branch strong = {} weak = {}",
-                 Rc::strong_count(&branch),
-                 Rc::weak_count(&branch));
-        println!("leaf strong = {} weak = {}",
-                 Rc::strong_count(&leaf),
-                 Rc::weak_count(&leaf));
+        println!(
+            "branch strong = {} weak = {}",
+            Rc::strong_count(&branch),
+            Rc::weak_count(&branch)
+        );
+        println!(
+            "leaf strong = {} weak = {}",
+            Rc::strong_count(&leaf),
+            Rc::weak_count(&leaf)
+        );
         println!("leaf parent = {:?}", leaf.parent.borrow().upgrade());
-
     }
 
     println!("leaf parent = {:?}", leaf.parent.borrow().upgrade());
-    println!("leaf strong = {}  weak = {}",
-             Rc::strong_count(&leaf),
-             Rc::weak_count(&leaf));
+    println!(
+        "leaf strong = {}  weak = {}",
+        Rc::strong_count(&leaf),
+        Rc::weak_count(&leaf)
+    );
 }

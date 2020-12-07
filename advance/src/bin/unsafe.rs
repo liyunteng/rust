@@ -16,14 +16,10 @@ fn test6() {
     }
 }
 
-unsafe trait Foo {
-
-}
+unsafe trait Foo {}
 
 // impl unsafe trait
-unsafe impl Foo for i32 {
-
-}
+unsafe impl Foo for i32 {}
 fn test5() {
     println!("name is : {}", HELLO_WORLD);
     // change mut static
@@ -52,8 +48,10 @@ fn split_at_mut(slice: &mut [i32], mid: usize) -> (&mut [i32], &mut [i32]) {
     assert!(mid <= len);
 
     unsafe {
-        (slice::from_raw_parts_mut(ptr, mid),
-        slice::from_raw_parts_mut(ptr.add(mid), len - mid))
+        (
+            slice::from_raw_parts_mut(ptr, mid),
+            slice::from_raw_parts_mut(ptr.add(mid), len - mid),
+        )
     }
 }
 

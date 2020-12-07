@@ -4,7 +4,7 @@ struct Point<T, U> {
     y: U,
 }
 
-impl<T,U> Point<T,U> {
+impl<T, U> Point<T, U> {
     fn x(&self) -> &T {
         &self.x
     }
@@ -15,8 +15,8 @@ impl<T,U> Point<T,U> {
 }
 
 fn main() {
-    let integer = Point{ x: 5, y: 'c'};
-    let float = Point { x: 1.0, y: 4};
+    let integer = Point { x: 5, y: 'c' };
+    let float = Point { x: 1.0, y: 4 };
     println!("interger = {:?} float = {:?}", integer, float);
     println!("integer.x = {} integer.y = {}", integer.x(), integer.y());
 }

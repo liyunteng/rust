@@ -22,8 +22,10 @@ fn main() {
     user1.email = String::from("yli@addx.ai");
     println!("{:#?}", user1);
 
-    println!("{:#?}", build_user(String::from("abc@163.com"),
-                                 String::from("abc")));
+    println!(
+        "{:#?}",
+        build_user(String::from("abc@163.com"), String::from("abc"))
+    );
 
     let user2 = User {
         email: String::from("yli@addx.ai"),

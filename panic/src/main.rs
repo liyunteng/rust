@@ -1,9 +1,9 @@
-use std::io;
+use std::error::Error;
 use std::fs;
 use std::fs::File;
-use std::io::Read;
+use std::io;
 use std::io::ErrorKind;
-use std::error::Error;
+use std::io::Read;
 
 fn read_username_from_file3() -> Result<String, io::Error> {
     fs::read_to_string("hello.txt")
@@ -64,7 +64,7 @@ fn test_result() {
 
     let f = match f {
         Ok(file) => file,
-        Err(error) =>  match error.kind() {
+        Err(error) => match error.kind() {
             ErrorKind::NotFound => match File::create("hello.txt") {
                 Ok(fc) => fc,
                 Err(e) => panic!("Problem creating the file: {:?}", e),

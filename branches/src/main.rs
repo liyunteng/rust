@@ -20,11 +20,7 @@ fn main() {
     }
 
     let condition = true;
-    let number = if condition {
-        5
-    } else {
-        6
-    };
+    let number = if condition { 5 } else { 6 };
     println!("The value of number is: {}", number);
 
     // E0308: `if` and `else` have incompatible types
@@ -45,7 +41,6 @@ fn main() {
         }
     };
     println!("The value of result is: {}", result);
-
 
     // while
     let mut number = 3;
@@ -71,5 +66,4 @@ fn main() {
         println!("{}", number);
     }
     println!("LIFTOFF!!");
-
 }

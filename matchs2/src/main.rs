@@ -9,27 +9,25 @@ enum Color {
 }
 enum Message {
     Quit,
-    Move { x: i32, y: i32},
+    Move { x: i32, y: i32 },
     Write(String),
     ChangeColor(Color),
 }
 
 enum E {
-    Hello {id: i32},
+    Hello { id: i32 },
 }
 fn test10() {
-    let msg = E::Hello{ id: 5};
+    let msg = E::Hello { id: 5 };
 
     match msg {
-        E::Hello { id: id_variable @ 3..=7 } => {
-            println!("Found an id in range: {}", id_variable)
-        },
-        E::Hello {id: 10..=12 } => {
-            println!("Found an id in another range")
-        },
+        E::Hello {
+            id: id_variable @ 3..=7,
+        } => println!("Found an id in range: {}", id_variable),
+        E::Hello { id: 10..=12 } => println!("Found an id in another range"),
         E::Hello { id } => {
             print!("Found some other id: {}", id);
-        },
+        }
     }
 }
 
@@ -64,7 +62,7 @@ fn test8() {
 
     match numbers {
         (first, .., last) => {
-            println!("Some numbers: {}, {}",first, last);
+            println!("Some numbers: {}, {}", first, last);
         }
     }
 }
@@ -89,35 +87,36 @@ fn test6() {
 
     match msg {
         Message::Quit => {
-            println!("The Quit variant has no data to destructure.", );
+            println!("The Quit variant has no data to destructure.",);
         }
-        Message::Move{ x, y } => {
-            println!("Move in the x direction {} and in the y direction {}", x, y );
+        Message::Move { x, y } => {
+            println!("Move in the x direction {} and in the y direction {}", x, y);
         }
         Message::Write(text) => {
             println!("Text message: {}", text);
         }
         Message::ChangeColor(Color::Rgb(r, g, b)) => {
-            println!("Change the color to red {}, green {}, and blue {}",
-                     r, g, b);
+            println!("Change the color to red {}, green {}, and blue {}", r, g, b);
         }
         Message::ChangeColor(Color::Hsv(h, s, v)) => {
-            println!("Change the color to hue {}, saturation {}, and value {}",
-                     h, s, v);
+            println!(
+                "Change the color to hue {}, saturation {}, and value {}",
+                h, s, v
+            );
         }
     }
 }
 
 fn test5() {
-    let p = Point { x: 0, y: 7};
-    let Point {x: a, y: b} = p;
+    let p = Point { x: 0, y: 7 };
+    let Point { x: a, y: b } = p;
     assert_eq!(a, 0);
     assert_eq!(b, 7);
 
     match p {
-        Point {x, y:0} => println!("On the x axis at {}", x),
-        Point { x: 0, y} => println!("On the y axis at {}", y),
-        Point {x, y} => println!("On neither axis: ({}, {})", x, y),
+        Point { x, y: 0 } => println!("On the x axis at {}", x),
+        Point { x: 0, y } => println!("On the y axis at {}", y),
+        Point { x, y } => println!("On neither axis: ({}, {})", x, y),
     }
 }
 
@@ -139,7 +138,6 @@ fn test4() {
         _ => println!("Default case, x = {:?}", x),
     }
     println!("at the end: x= {:?}, y = {:?}", x, y);
-
 
     let x = 1;
     match x {
@@ -170,7 +168,7 @@ fn test3() {
     }
 }
 
-fn test2()  {
+fn test2() {
     let mut stack = Vec::new();
 
     stack.push(1);
@@ -182,8 +180,7 @@ fn test2()  {
     }
 }
 
-fn test1()
-{
+fn test1() {
     let favorite_color: Option<&str> = None;
     let is_tuesday = false;
     let age: Result<u8, _> = "34".parse();

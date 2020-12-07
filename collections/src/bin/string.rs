@@ -23,7 +23,7 @@ fn test_update() {
     let s2 = String::from("world!");
     // s1 is moved
     let s3 = s1 + &s2;
-    println!("{}",  s3);
+    println!("{}", s3);
 
     let s1 = String::from("tic");
     let s2 = String::from("tac");

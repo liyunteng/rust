@@ -13,7 +13,6 @@
 ///
 /// assert_eq!(6, answer);
 /// ```
-
 pub use self::kinds::PrimaryColor;
 pub use self::kinds::SecondaryColor;
 pub use self::utils::mix;

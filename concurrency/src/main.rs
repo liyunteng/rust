@@ -1,7 +1,7 @@
+use std::sync::mpsc;
+use std::sync::{Arc, Mutex};
 use std::thread;
 use std::time::Duration;
-use std::sync::mpsc;
-use std::sync::{Mutex, Arc};
 
 fn test4() {
     let counter = Arc::new(Mutex::new(0));
@@ -62,7 +62,7 @@ fn test2() {
     let (tx, rx) = mpsc::channel();
 
     thread::spawn(move || {
-        let vals = vec! [
+        let vals = vec![
             String::from("hi"),
             String::from("from"),
             String::from("the"),
@@ -73,13 +73,11 @@ fn test2() {
             tx.send(val).unwrap();
             thread::sleep(Duration::from_secs(1));
         }
-
     });
 
     for received in rx {
         println!("Got: {}", received);
     }
-
 }
 
 fn test1() {

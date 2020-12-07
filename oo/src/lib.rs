@@ -15,7 +15,7 @@ impl AveragedCollection {
             Some(value) => {
                 self.update_average();
                 Some(value)
-            },
+            }
             None => None,
         }
     }
@@ -50,7 +50,7 @@ impl Screen {
 pub struct Button {
     pub width: u32,
     pub height: u32,
-    pub label: String
+    pub label: String,
 }
 
 impl Draw for Button {
@@ -58,8 +58,6 @@ impl Draw for Button {
         println!("Button: {:?}", &self);
     }
 }
-
-
 
 pub struct Post {
     state: Option<Box<dyn State>>,
@@ -105,16 +103,15 @@ trait State {
 
 struct Draft {}
 
-impl State for Draft{
+impl State for Draft {
     fn request_review(self: Box<Self>) -> Box<dyn State> {
-        Box::new(PendingReview{})
+        Box::new(PendingReview {})
     }
 
     fn approve(self: Box<Self>) -> Box<dyn State> {
         self
     }
 }
-
 
 struct PendingReview {}
 

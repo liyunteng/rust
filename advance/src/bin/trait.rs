@@ -1,5 +1,5 @@
-use std::ops::Add;
 use std::fmt;
+use std::ops::Add;
 
 struct Wrapper(Vec<String>);
 impl fmt::Display for Wrapper {
@@ -9,8 +9,7 @@ impl fmt::Display for Wrapper {
 }
 
 fn test5() {
-    let w = Wrapper(vec![String::from("hello"),
-                         String::from("world")]);
+    let w = Wrapper(vec![String::from("hello"), String::from("world")]);
     println!("w = {}", w);
 }
 //////////////////////////////////////////////////
@@ -22,14 +21,14 @@ trait OutlinePrint: fmt::Display {
         println!("{}", "*".repeat(len + 4));
         println!("*{}*", " ".repeat(len + 2));
         println!("* {} *", output);
-        println!("*{}*", " ".repeat(len + 2) );
+        println!("*{}*", " ".repeat(len + 2));
         println!("{}", "*".repeat(len + 4));
     }
 }
 
 struct Point1 {
     x: i32,
-    y: i32
+    y: i32,
 }
 
 impl fmt::Display for Point1 {
@@ -40,7 +39,7 @@ impl fmt::Display for Point1 {
 impl OutlinePrint for Point1 {}
 
 fn test4() {
-    let p = Point1 { x: 1, y: 2};
+    let p = Point1 { x: 1, y: 2 };
     p.outline_print();
 }
 
@@ -124,14 +123,14 @@ impl Add for Point {
     fn add(self, other: Point) -> Point {
         Point {
             x: self.x + other.x,
-            y: self.y + other.y
+            y: self.y + other.y,
         }
     }
 }
 
 fn test1() {
-    let p1 = Point{x: 1, y: 0};
-    let p2 = Point { x: 2, y: 3};
+    let p1 = Point { x: 1, y: 0 };
+    let p2 = Point { x: 2, y: 3 };
     println!("{:?}", p1 + p2);
 }
 

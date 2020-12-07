@@ -6,11 +6,7 @@ enum X {
 }
 
 fn test_x() {
-    let row = vec![
-        X::Int(3),
-        X::Float(10.12),
-        X::Text(String::from("blue"))
-    ];
+    let row = vec![X::Int(3), X::Float(10.12), X::Text(String::from("blue"))];
     for i in &row {
         println!("{:?}", i);
     }
@@ -44,7 +40,7 @@ fn test_create() {
     let v: Vec<i32> = Vec::new();
     println!("{:?}", v);
 
-    let v = vec![1,2,3];
+    let v = vec![1, 2, 3];
     println!("{:?}", v);
 
     let mut v = Vec::new();
@@ -55,7 +51,7 @@ fn test_create() {
     println!("{:?}", v);
 }
 
-fn main () {
+fn main() {
     test_create();
     test_read();
     test_x();

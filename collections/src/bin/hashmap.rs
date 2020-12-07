@@ -45,11 +45,10 @@ fn test_create() {
 
     println!("{:#?}", m);
 
-    let teams = vec![String::from("Blue"),
-                    String::from("Yellow")];
+    let teams = vec![String::from("Blue"), String::from("Yellow")];
     let scores = vec![10, 50];
 
-    let m: HashMap<_,_> = teams.iter().zip(scores.iter()).collect();
+    let m: HashMap<_, _> = teams.iter().zip(scores.iter()).collect();
     println!("{:#?}", m);
 
     let name = String::from("Favorite color");

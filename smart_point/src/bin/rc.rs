@@ -24,5 +24,4 @@ fn main() {
     println!("count after b gose out of scope = {}", Rc::strong_count(&a));
 
     println!("{:?}", a);
-
 }

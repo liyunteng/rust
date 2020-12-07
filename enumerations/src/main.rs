@@ -19,7 +19,7 @@ enum Ip {
 #[derive(Debug)]
 enum Message {
     Quit,
-    Move { x: i32, y: i32},
+    Move { x: i32, y: i32 },
     Write(String),
     ChangeColor(i32, i32, i32),
 }
@@ -33,12 +33,12 @@ impl Message {
 fn main() {
     let home = IpAddr {
         kind: IpAddrKind::V4,
-        address: String::from("127.0.0.1")
+        address: String::from("127.0.0.1"),
     };
 
     let loopback = IpAddr {
         kind: IpAddrKind::V6,
-        address: String::from("::1")
+        address: String::from("::1"),
     };
 
     println!("{:#?} {:#?}", home, loopback);
@@ -50,10 +50,10 @@ fn main() {
     let m = Message::Quit;
     m.call();
 
-    let m = Message::Move{ x: 1, y: 2};
+    let m = Message::Move { x: 1, y: 2 };
     m.call();
 
-    let  m = Message::Write(String::from("hello"));
+    let m = Message::Write(String::from("hello"));
     m.call();
 
     let m = Message::ChangeColor(1, 2, 3);

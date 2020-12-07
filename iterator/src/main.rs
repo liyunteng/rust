@@ -11,10 +11,9 @@ struct Counter {
 
 impl Counter {
     fn new() -> Counter {
-        Counter { count: 0}
+        Counter { count: 0 }
     }
 }
-
 
 impl Iterator for Counter {
     type Item = u32;
@@ -31,9 +30,7 @@ impl Iterator for Counter {
 }
 
 fn shoes_in_my_size(shoes: Vec<Shoe>, shoe_size: u32) -> Vec<Shoe> {
-    shoes.into_iter()
-        .filter(|s| s.size == shoe_size)
-        .collect()
+    shoes.into_iter().filter(|s| s.size == shoe_size).collect()
 }
 
 fn main() {
@@ -68,7 +65,7 @@ mod tests {
     }
 
     #[test]
-    fn iterator_adpater () {
+    fn iterator_adpater() {
         let v1: Vec<i32> = vec![1, 2, 3];
 
         let v2: Vec<_> = v1.iter().map(|x| x + 1).collect();
@@ -78,25 +75,40 @@ mod tests {
 
     #[test]
     fn filters_by_size() {
-        let shoes = vec! [
-            Shoe { size: 10, style: String::from("sneaker")},
-            Shoe { size: 13, style: String::from("sandal")},
-            Shoe { size: 10, style: String::from("boot")},
+        let shoes = vec![
+            Shoe {
+                size: 10,
+                style: String::from("sneaker"),
+            },
+            Shoe {
+                size: 13,
+                style: String::from("sandal"),
+            },
+            Shoe {
+                size: 10,
+                style: String::from("boot"),
+            },
         ];
 
         let in_my_size = shoes_in_my_size(shoes, 10);
 
-        assert_eq! (
+        assert_eq!(
             in_my_size,
-            vec! [
-                Shoe { size: 10, style: String::from("sneaker")},
-                Shoe { size: 10, style: String::from("boot")},
+            vec![
+                Shoe {
+                    size: 10,
+                    style: String::from("sneaker")
+                },
+                Shoe {
+                    size: 10,
+                    style: String::from("boot")
+                },
             ]
         );
     }
 
     #[test]
-    fn calling_next_directly () {
+    fn calling_next_directly() {
         let mut counter = Counter::new();
 
         assert_eq!(counter.next(), Some(1));
@@ -109,8 +121,9 @@ mod tests {
 
     #[test]
     fn using_other_iterator_trait_methods() {
-        let sum: u32 = Counter::new().zip(Counter::new().skip(1))
-            .map(|(a,b)| a * b)
+        let sum: u32 = Counter::new()
+            .zip(Counter::new().skip(1))
+            .map(|(a, b)| a * b)
             .filter(|x| x % 3 == 0)
             .sum();
         assert_eq!(18, sum);

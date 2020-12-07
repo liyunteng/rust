@@ -1,9 +1,9 @@
 use web_server::ThreadPool;
 
-use std::io::prelude::*;
-use std::net::TcpStream;
-use std::net::TcpListener;
 use std::fs;
+use std::io::prelude::*;
+use std::net::TcpListener;
+use std::net::TcpStream;
 use std::thread;
 use std::time::Duration;
 
