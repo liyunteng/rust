@@ -23,4 +23,6 @@ members = [
     "variables",
     "smart_point",
     "concurrency",
+    "oo",
+    "matchs2",
 ]

@@ -79,11 +79,19 @@ name = "matchs"
 version = "0.1.0"
 
 [[package]]
+name = "matchs2"
+version = "0.1.0"
+
+[[package]]
 name = "minigrep"
 version = "0.1.0"
 
 [[package]]
 name = "my_crate"
+version = "0.1.0"
+
+[[package]]
+name = "oo"
 version = "0.1.0"
 
 [[package]]
