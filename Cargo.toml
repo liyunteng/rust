@@ -25,4 +25,5 @@ members = [
     "concurrency",
     "oo",
     "matchs2",
+    "advance",
 ]
