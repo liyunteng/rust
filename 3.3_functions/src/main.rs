@@ -1,3 +1,4 @@
+#[allow(unused_variables)]
 fn main() {
     // error: `let` statement have no return value
     // let x = (let y = 6);

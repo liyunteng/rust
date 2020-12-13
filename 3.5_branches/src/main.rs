@@ -57,6 +57,7 @@ fn main() {
         index += 1;
     }
 
+    println!("{:?} {}", a.iter(), a.len());
     // for
     for element in a.iter() {
         println!("the value is: {}", element);
