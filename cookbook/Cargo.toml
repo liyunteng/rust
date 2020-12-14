@@ -1,0 +1,16 @@
+[package]
+name = "cookbook"
+version = "0.1.0"
+authors = ["liyunteng <li_yunteng@163.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ansi_term = "0.12.1"
+clap = "2.33.3"
+crossbeam = "0.8.0"
+flate2 = "1.0.19"
+rand = "0.7.3"
+rand_distr = "0.3.0"
+tar = "0.4.30"
