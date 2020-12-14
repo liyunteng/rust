@@ -48,6 +48,10 @@ name = "enumerations"
 version = "0.1.0"
 
 [[package]]
+name = "example"
+version = "0.1.0"
+
+[[package]]
 name = "fuchsia-cprng"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"

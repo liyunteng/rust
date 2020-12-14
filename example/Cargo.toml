@@ -1,0 +1,9 @@
+[workspace]
+members = [
+    "display",
+    "slice",
+    "structure",
+    "enumerate",
+    "list",
+    "cast",
+]
